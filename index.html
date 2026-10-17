@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fff8f1">
+  <meta name="description" content="A little birthday surprise for Anotida Tsangu, sent with love and a long-distance high five.">
+  <title>Happy Birthday, Anotida! 🎂</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root { --ink:#392b36; --muted:#786b75; --berry:#b64368; --peach:#ffb792; --cream:#fff8f1; --lilac:#eee5f5; }
+    * { box-sizing:border-box }
+    html { scroll-behavior:smooth }
+    body { margin:0; color:var(--ink); background:var(--cream); font-family:'DM Sans',sans-serif; overflow-x:hidden }
+    button { font:inherit }
+    .paper { position:relative; overflow:hidden }
+    .paper:before,.paper:after { content:'✿'; position:absolute; z-index:0; color:#f2d8cf; font-size:clamp(120px,20vw,280px); opacity:.55; pointer-events:none }
+    .paper:before { top:60px; left:-95px; transform:rotate(-20deg) }
+    .paper:after { top:500px; right:-85px; transform:rotate(25deg) }
+    .nav { position:absolute; z-index:2; width:min(1100px,calc(100% - 48px)); left:50%; top:26px; transform:translateX(-50%); display:flex; justify-content:space-between; align-items:center; font-size:13px; color:var(--muted) }
+    .brand { font-weight:700; letter-spacing:.07em; color:var(--berry) }
+    .hero { isolation:isolate; min-height:710px; padding:135px 24px 76px; display:grid; place-items:center; position:relative }
+    .hero-inner { width:min(1080px,100%); display:grid; grid-template-columns:1fr .9fr; gap:64px; align-items:center; position:relative; z-index:1 }
+    .eyebrow { display:inline-flex; align-items:center; gap:9px; border:1px solid #f0d7ce; padding:9px 14px; border-radius:99px; background:#fffaf6; color:var(--berry); font-size:12px; font-weight:700; letter-spacing:.08em; text-transform:uppercase }
+    h1,h2,h3,p { margin-top:0 }
+    h1 { font:800 clamp(54px,7vw,94px)/.98 'Playfair Display',serif; letter-spacing:-.055em; margin:25px 0 20px }
+    h1 span { color:var(--berry); display:block }
+    .intro { max-width:465px; color:var(--muted); font-size:17px; line-height:1.8; margin-bottom:26px }
+    .open-note { border:0; color:white; background:var(--berry); box-shadow:0 10px 25px #b6436830; padding:15px 22px; border-radius:99px; cursor:pointer; font-weight:700; transition:transform .2s,box-shadow .2s }
+    .open-note:hover { transform:translateY(-3px); box-shadow:0 14px 30px #b6436840 }
+    .photo-wrap { position:relative; width:min(100%,410px); margin:auto; padding:12px; border-radius:220px 220px 28px 28px; background:#fff; box-shadow:0 24px 70px #5035481c; transform:rotate(2deg) }
+    .photo-wrap:after { content:'✦'; position:absolute; right:-27px; top:40px; color:#e7a345; font-size:50px }
+    .photo-wrap img { display:block; width:100%; height:490px; object-fit:cover; object-position:center 38%; border-radius:210px 210px 20px 20px }
+    .photo-caption { position:absolute; bottom:25px; left:-34px; padding:13px 18px; border-radius:14px; background:white; box-shadow:0 8px 30px #50354820; transform:rotate(-5deg); font:600 14px 'Playfair Display',serif }
+    .scroll-hint { position:absolute; bottom:24px; color:#9b8c96; font-size:12px; letter-spacing:.12em; text-transform:uppercase }
+    .section { position:relative; z-index:1; padding:95px 24px }
+    .note-section { background:#f1e8f5 }
+    .section-inner { width:min(880px,100%); margin:auto }
+    .center { text-align:center }
+    .kicker { color:var(--berry); text-transform:uppercase; letter-spacing:.15em; font-size:11px; font-weight:700 }
+    h2 { font:700 clamp(38px,5vw,60px)/1.1 'Playfair Display',serif; letter-spacing:-.035em; margin:13px 0 18px }
+    .note-card { margin:35px auto 0; max-width:740px; padding:clamp(27px,6vw,58px); background:#fffdfa; border:1px solid #f1e7df; border-radius:24px; box-shadow:0 16px 50px #5035480d; text-align:left; position:relative }
+    .note-card[hidden] { display:none }
+    .note-card.reveal { animation:pop .55s ease both }
+    .note-toggle { margin-top:22px; border:1px solid #e7cada; border-radius:99px; padding:12px 18px; color:var(--berry); background:#fffaf6; font-weight:700; cursor:pointer; transition:transform .2s,background .2s }
+    .note-toggle:hover { transform:translateY(-2px); background:#fff }
+    .note-card:before { content:'“'; font:100px/.6 'Playfair Display',serif; color:#eac3d0; position:absolute; top:30px; left:25px }
+    .note-card p { position:relative; margin:0; color:#554651; font:500 clamp(17px,2.2vw,20px)/1.85 'DM Sans',sans-serif }
+    .note-card p+p { margin-top:18px }
+    .signature { display:block; color:var(--berry); font:700 20px 'Playfair Display',serif; margin-top:25px }
+    .stats { display:flex; justify-content:center; gap:12px; flex-wrap:wrap; margin:28px 0 0 }
+    .pill { background:#fff9f3; padding:10px 15px; border-radius:99px; color:#795a69; font-size:13px }
+    .song-section { background:#fff1e8 }
+    .song-button { border:0; border-radius:99px; padding:14px 21px; background:var(--berry); color:white; font-weight:700; cursor:pointer; box-shadow:0 10px 25px #b6436830; transition:transform .2s }
+    .song-button:hover { transform:translateY(-2px) }
+    .song-player { max-width:720px; margin:26px auto 0; aspect-ratio:16/9; overflow:hidden; border-radius:18px; box-shadow:0 18px 50px #50354820 }
+    .song-player[hidden] { display:none }
+    .song-player iframe { width:100%; height:100%; border:0 }
+    .song-hint { margin:15px 0 0; color:var(--muted); font-size:13px }
+    .gallery { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:22px; margin-top:38px; align-items:center }
+    .gallery figure { margin:0; background:white; padding:10px 10px 16px; border-radius:18px; box-shadow:0 15px 45px #50354813 }
+    .gallery figure:first-child { transform:rotate(-2deg) }
+    .gallery figure:last-child { transform:rotate(2deg); margin-top:45px }
+    .gallery img { display:block; width:100%; height:330px; border-radius:11px; object-fit:cover }
+    .gallery img { cursor:zoom-in }
+    .gallery img:focus-visible { outline:3px solid var(--berry); outline-offset:4px }
+    .gallery figure:first-child img { object-position:center 40% }
+    .gallery figcaption { padding:13px 8px 0; font:600 15px 'Playfair Display',serif; color:#695461 }
+    .closer { background:#4b3547; color:#fff8f1; text-align:center; padding:88px 24px 76px }
+    .closer h2 { max-width:700px; margin:13px auto 17px }
+    .closer p { color:#e6dce4; line-height:1.8; max-width:560px; margin:0 auto 27px }
+    .closer .open-note { color:var(--ink); background:#ffd5b9; box-shadow:none }
+    footer { text-align:center; background:#4b3547; color:#cbbbc8; padding:0 20px 28px; font-size:12px }
+    .hidden-note { display:none; max-width:540px; margin:24px auto 0; padding:18px 22px; border:1px solid #8c7184; border-radius:16px; color:#fff8f1 }
+    .hidden-note.show { display:block; animation:pop .45s ease both }
+    .lightbox { width:min(92vw,760px); max-height:92vh; padding:14px; border:0; border-radius:20px; background:#fffaf6; color:var(--ink); box-shadow:0 25px 90px #1d101d66 }
+    .lightbox::backdrop { background:#241522c9; backdrop-filter:blur(5px) }
+    .lightbox img { display:block; max-width:100%; max-height:76vh; object-fit:contain; margin:auto; border-radius:12px }
+    .lightbox p { margin:12px 5px 2px; text-align:center; color:var(--muted); font:600 16px 'Playfair Display',serif }
+    .lightbox-close { display:block; margin:0 0 10px auto; border:0; border-radius:99px; padding:8px 14px; color:#fff; background:var(--berry); font-weight:700; cursor:pointer }
+    .confetti { position:fixed; z-index:10; top:-20px; width:10px; height:14px; pointer-events:none; animation:fall 2.5s ease-in forwards }
+    @keyframes fall { to { transform:translate(var(--drift),110vh) rotate(720deg); opacity:.2 } }
+    @keyframes pop { from { opacity:0; transform:translateY(9px) scale(.98) } to { opacity:1; transform:none } }
+    @media(max-width:760px) {
+      .nav { top:18px; width:calc(100% - 36px) }
+      .hero { min-height:auto; padding:105px 22px 80px }
+      .hero-inner { grid-template-columns:1fr; gap:34px; text-align:center }
+      .intro { margin-left:auto; margin-right:auto; font-size:16px }
+      .photo-wrap { width:min(79vw,340px) }
+      .photo-wrap img { height:min(105vw,400px) }
+      .photo-caption { left:-22px }
+      .scroll-hint { bottom:24px }
+      .section { padding:72px 21px }
+      .gallery { grid-template-columns:repeat(2,minmax(0,1fr)); gap:13px }
+      .gallery img { height:230px }
+      .gallery figure:last-child { margin-top:25px }
+    }
+    @media(max-width:420px) { .gallery { grid-template-columns:1fr; max-width:300px; margin-left:auto; margin-right:auto }.gallery figure:last-child { margin-top:0 }.gallery img { height:310px } }
+    @media(prefers-reduced-motion:reduce) { *,*:before,*:after { scroll-behavior:auto!important; animation-duration:.01ms!important; animation-iteration-count:1!important; transition-duration:.01ms!important } }
+  </style>
+</head>
+<body>
+  <main class="paper">
+    <nav class="nav" aria-label="Birthday page"><span class="brand">A LITTLE BIRTHDAY POSTCARD</span><span>Zimbabwe ⇢ Malaysia</span></nav>
+    <section class="hero" aria-labelledby="title">
+      <div class="hero-inner">
+        <div>
+          <span class="eyebrow">✦ Today is your day</span>
+          <h1 id="title">Happy birthday,<span>Anotida!</span></h1>
+          <p class="intro">A tiny celebration travelling all the way from here to Malaysia, because one birthday text felt wildly underqualified for the occasion.</p>
+          <button class="open-note" data-note-open>Open your birthday note&nbsp; ✨</button>
+        </div>
+        <div class="photo-wrap"><img src="assets/anotida-smile.jpeg" alt="Anotida smiling outdoors in a blue cap"><span class="photo-caption">Birthday star, obviously ✨</span></div>
+      </div>
+      <span class="scroll-hint">A little further ↓</span>
+    </section>
+
+    <section class="section note-section" id="note" aria-labelledby="note-title">
+      <div class="section-inner center">
+        <span class="kicker">A note from a very long way away</span>
+        <h2 id="note-title">It’s been a while since we last caught up.</h2>
+        <button class="note-toggle" id="note-toggle" aria-expanded="false" aria-controls="birthday-letter">Tap to open the birthday letter ✉️</button>
+        <div class="note-card" id="birthday-letter" hidden>
+          <p>Happy birthday, Anotida! I hope your day is full of good food, big laughs, and people who make you feel as wonderful as you are.</p>
+          <p>It’s been quite a while since I last saw you, which is frankly a ridiculous amount of time. Malaysia has been keeping you busy, I see. Please tell it to stop being so far away for at least one birthday.</p>
+          <p>Keep being your brilliant, funny self. I’m cheering you on from over here—and sending this extremely advanced long-distance high five. (The technology is still being perfected.)</p>
+          <p>Have the loveliest birthday. You deserve all the cake. Even the slightly lopsided slice.</p>
+          <span class="signature">With warm birthday wishes ♡<br>Brighton Sande</span>
+        </div>
+        <div class="stats"><span class="pill">🎂 Cake: non-negotiable</span><span class="pill">🌏 Distance: rude</span><span class="pill">🙌 High five: en route</span></div>
+      </div>
+    </section>
+
+    <section class="section song-section" aria-labelledby="song-title">
+      <div class="section-inner center">
+        <span class="kicker">A song for your special day</span>
+        <h2 id="song-title">A birthday prayer, just for you.</h2>
+        <p class="intro" style="margin-left:auto;margin-right:auto">A little music to go with all the birthday wishes.</p>
+        <button class="song-button" id="song-toggle" type="button" aria-expanded="false" aria-controls="song-player">Play “Birthday Prayer” 🎵</button>
+        <div class="song-player" id="song-player" hidden>
+          <iframe title="Birthday Prayer by Godswill James — YouTube video" allow="autoplay; encrypted-media; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <p class="song-hint">By Godswill James · Plays from YouTube</p>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="gallery-title">
+      <div class="section-inner center">
+        <span class="kicker">A tiny photo break</span>
+        <h2 id="gallery-title">The birthday star in her natural habitat.</h2>
+        <div class="gallery">
+          <figure><img src="assets/WhatsApp Image 2026-10-17 at 19.55.12 (1).jpeg" alt="Anotida with her hair fanned out, looking up at the camera"><figcaption>Serving effortless birthday-star energy.</figcaption></figure>
+          <figure><img src="assets/20250307_161918.jpg" alt="Anotida taking a playful selfie outdoors in a cap"><figcaption>That sunshine is competing with the birthday star.</figcaption></figure>
+          <figure><img src="assets/anotida-playful.jpeg" alt="Anotida making a playful face in a white top"><figcaption>Professional birthday girl behaviour.</figcaption></figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="closer" aria-labelledby="closer-title">
+      <span class="kicker" style="color:#ffd5b9">One last thing</span>
+      <h2 id="closer-title">May your year be full of good surprises.</h2>
+      <p>More reasons to laugh, more lovely memories, and a birthday cake that is generously sized and correctly distributed.</p>
+      <button class="open-note" data-surprise>One more birthday surprise 🎁</button>
+      <div class="hidden-note" id="surprise" role="status" aria-live="polite">Surprise! Somewhere, a very enthusiastic birthday cheer is travelling toward Malaysia right now. It may take the scenic route. 🎉</div>
+    </section>
+  </main>
+  <dialog class="lightbox" id="photo-view" aria-label="Photo viewer">
+    <button class="lightbox-close" type="button" data-close-photo>Close ✕</button>
+    <img alt="">
+    <p></p>
+  </dialog>
+  <footer>Made with a smile, a little distance, and a lot of birthday spirit · Happy birthday, Anotida ♡<br>From Brighton Sande</footer>
+  <script>
+    const surprise = document.querySelector('#surprise');
+    const letter = document.querySelector('#birthday-letter');
+    const noteToggle = document.querySelector('#note-toggle');
+    function toggleLetter(open) {
+      letter.hidden = !open;
+      letter.classList.toggle('reveal', open);
+      noteToggle.setAttribute('aria-expanded', String(open));
+      noteToggle.textContent = open ? 'Fold up the birthday letter ✉️' : 'Tap to open the birthday letter ✉️';
+    }
+    document.querySelector('[data-note-open]').addEventListener('click', () => {
+      toggleLetter(true);
+      document.querySelector('#note').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+    noteToggle.addEventListener('click', () => toggleLetter(letter.hidden));
+
+    const photoDialog = document.querySelector('#photo-view');
+    const largePhoto = photoDialog.querySelector('img');
+    const photoCaption = photoDialog.querySelector('p');
+    document.querySelectorAll('.gallery figure').forEach(figure => {
+      const thumbnail = figure.querySelector('img');
+      const caption = figure.querySelector('figcaption').textContent;
+      thumbnail.tabIndex = 0;
+      thumbnail.setAttribute('role', 'button');
+      thumbnail.setAttribute('aria-label', `View larger photo: ${caption}`);
+      const openPhoto = () => {
+        largePhoto.src = thumbnail.src;
+        largePhoto.alt = thumbnail.alt;
+        photoCaption.textContent = caption;
+        photoDialog.showModal();
+      };
+      thumbnail.addEventListener('click', openPhoto);
+      thumbnail.addEventListener('keydown', event => {
+        if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); openPhoto(); }
+      });
+    });
+    document.querySelector('[data-close-photo]').addEventListener('click', () => photoDialog.close());
+    photoDialog.addEventListener('click', event => { if (event.target === photoDialog) photoDialog.close(); });
+
+    const songToggle = document.querySelector('#song-toggle');
+    const songPlayer = document.querySelector('#song-player');
+    const songFrame = songPlayer.querySelector('iframe');
+    songToggle.addEventListener('click', () => {
+      const opening = songPlayer.hidden;
+      songPlayer.hidden = !opening;
+      songToggle.setAttribute('aria-expanded', String(opening));
+      songToggle.textContent = opening ? 'Hide the song player ♪' : 'Play “Birthday Prayer” 🎵';
+      if (opening) {
+        songFrame.src = 'https://www.youtube-nocookie.com/embed/IiNZeHV0an4?autoplay=1&rel=0';
+        songPlayer.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      } else {
+        songFrame.removeAttribute('src');
+      }
+    });
+
+    function celebrate() {
+      surprise.classList.add('show');
+      surprise.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      const colors = ['#ffb792', '#eaa3bd', '#b9a4d4', '#f3d879', '#fff8f1'];
+      for (let i = 0; i < 42; i++) {
+        const piece = document.createElement('i');
+        piece.className = 'confetti';
+        piece.style.left = Math.random() * 100 + 'vw';
+        piece.style.backgroundColor = colors[i % colors.length];
+        piece.style.setProperty('--drift', (Math.random() * 180 - 90) + 'px');
+        piece.style.animationDelay = (Math.random() * .65) + 's';
+        document.body.appendChild(piece);
+        setTimeout(() => piece.remove(), 3300);
+      }
+    }
+    document.querySelector('[data-surprise]').addEventListener('click', celebrate);
+  </script>
+</body>
+</html>
